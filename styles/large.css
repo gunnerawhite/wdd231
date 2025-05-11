@@ -1,0 +1,161 @@
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  /* Layout constraints */
+  header, nav, main, footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+  }
+
+  /* Header layout */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header img {
+    width: 100px;
+    height: auto;
+    margin-right: 1rem;
+  }
+
+  /* Hide hamburger on larger screens */
+  .nav-toggle {
+    display: none;
+  }
+
+  /* Horizontal nav menu */
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+  }
+
+  .nav-menu li {
+    border: none;
+  }
+
+  .nav-menu a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .nav-menu a:hover {
+    background-color: #cce5ff;
+    border-radius: 5px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  /* Main content layout */
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Flexbox layout for first two sections */
+  .top-sections {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  /* Style for individual sections */
+  section {
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+  }
+
+  h2 {
+    color: var(--primary-color);
+    text-align: center;
+  }
+
+  .arizona-img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+
+  section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    text-align: center;
+  }
+
+  /* For courses layout (3x2 grid) */
+  .courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+  }
+
+  .course {
+    flex: 1 1 calc(33.333% - 1.5rem);
+    max-width: 200px;
+  }
+
+  .course:hover {
+    background-color: #cce5ff;
+  }
+
+  .course.incomplete {
+    background-color: var(--incomplete-color);
+    color: #dc3545;
+  }
+
+  .course.completed {
+    background-color: var(--completed-color);
+    color: #28a745;
+  }
+
+  /* Certificate header */
+  .certificate-header {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .certificate-title {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .certificate-title.active,
+  .certificate-title:hover {
+    background-color: #cce5ff;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+}
