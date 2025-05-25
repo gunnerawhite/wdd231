@@ -11,6 +11,7 @@
   }
 
   main {
+    display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -20,6 +21,8 @@
     width: 300px;
     margin: 1rem;
   }
+
+  
 
 /* Default base styles for the directory container */
 #directory {
@@ -42,7 +45,7 @@
   gap: 1rem;
 }
 
-/* Hide images in list view */
+/* Hide images in list view*/
 .list-view img {
   display: none;
 }
@@ -61,6 +64,17 @@
   height: auto;
   display: block;
 }
+  .spotlights {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 1rem;
+  }
 
-
+  .spotlights .card {
+    flex: 0 0 30%; /* roughly 3 cards per row */
+    max-width: 300px;
+  }
 }
