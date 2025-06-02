@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You | Gilbert Chamber</title>
+  <link rel="stylesheet" href="styles/normalize.css" />
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/large.css" />
+</head>
+<body>
+  <header>
+    <h1>Gilbert Chamber of Commerce</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="join.html">Join</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="thank-you">
+      <h2>Thank You for Joining!</h2>
+      <p>Here is the information you submitted:</p>
+      <ul id="submitted-data"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Gilbert Chamber of Commerce</p>
+  </footer>
+
+  <script>
+    // Display current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Parse query string data
+    const params = new URLSearchParams(window.location.search);
+    const output = document.getElementById("submitted-data");
+
+    const fields = [
+      { label: "First Name", key: "fname" },
+      { label: "Last Name", key: "lname" },
+      { label: "Email", key: "email" },
+      { label: "Phone", key: "phone" },
+      { label: "Organization", key: "org" },
+      { label: "Submission Date", key: "timestamp" },
+    ];
+
+    fields.forEach(({ label, key }) => {
+      const value = params.get(key);
+      if (value) {
+        const li = document.createElement("li");
+        li.innerHTML = `<strong>${label}:</strong> ${decodeURIComponent(value)}`;
+        output.appendChild(li);
+      }
+    });
+  </script>
+</body>
+</html>

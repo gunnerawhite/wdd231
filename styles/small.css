@@ -22,30 +22,42 @@ body {
   line-height: 1.5;
 }
 
+/* Container for consistent max width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 /* Header */
 header {
   background-color: var(--primary-color);
   color: white;
   padding: 1rem;
+  /* Make header a flex container with space-between */
+  display: flex;
+  justify-content: center; /* center text horizontally */
+  align-items: center;     /* center vertically */
   text-align: center;
+  gap: 1rem;               /* space between children */
+  flex-wrap: wrap;         /* allow wrapping on smaller screens */
+}
+
+header span {
+  /* Make the span take full available width */
+  flex: 1 1 100%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  word-spacing: 0.3em;    /* add spacing between words */
 }
 
 header img {
   width: 80px;
   height: auto;
   border-radius: 50%;
+  margin-right: 0.5rem;
 }
 
-header span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
 
 /* Navigation */
 nav {
@@ -112,16 +124,26 @@ main {
   padding: 1rem;
 }
 
+/* Headings */
 h1, h2 {
   color: var(--primary-color);
 }
 
+/* Image styling */
 .arizona-img {
-  max-width: 80%;      
-  height: auto;        
-  display: block;      
-  margin: 0 auto;      
-  border-radius: 8px;  
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* Section styling */
+section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
 }
 
 section p {
@@ -131,54 +153,52 @@ section p {
   text-align: center;
 }
 
-section {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background-color: var(--secondary-color);
-  border-radius: 8px;
-}
-
 /* Course grid layout */
 .courses {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
+  width: 100%;
 }
 
 /* Course box styling */
 .course {
   padding: 1rem;
   text-align: center;
-  width: 80%;
-  max-width: 120px;
+  width: 100%;
+  max-width: 300px;
   border-radius: 8px;
   font-weight: bold;
   background-color: var(--completed-color);
   color: var(--primary-color);
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
 }
 
 .course:hover {
-  background-color: #cce5ff; /* Light hover effect */
+  background-color: #cce5ff;
 }
 
 .course.incomplete {
-  background-color: var(--incomplete-color); /* Red for incomplete courses */
-  color: #dc3545; /* Red text color for unfinished courses */
+  background-color: var(--incomplete-color);
+  color: #dc3545;
 }
 
 .course.completed {
-  background-color: var(--completed-color); /* Green for completed courses */
-  color: #28a745; /* Green text color for completed courses */
+  background-color: var(--completed-color);
+  color: #28a745;
 }
 
+/* Certificate header */
 .certificate-header {
   display: flex;
   justify-content: center;
   gap: 1rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .certificate-title {
@@ -197,19 +217,6 @@ section {
   background-color: #cce5ff;
 }
 
-/* Course styling for mobile */
-.courses {
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-}
-
-.course {
-  width: 80%;
-  max-width: 120px;
-  margin-bottom: 1rem;
-}
-
 /* Footer */
 footer {
   background-color: var(--primary-color);
@@ -220,4 +227,69 @@ footer {
 
 footer p {
   margin: 0.5rem 0;
+}
+
+/* Card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

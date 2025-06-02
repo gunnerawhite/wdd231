@@ -12,11 +12,26 @@
   }
 
   /* Header layout */
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  /* Make header a flex container with space-between */
+  display: flex;
+  justify-content: center; /* center text horizontally */
+  align-items: center;     /* center vertically */
+  text-align: center;
+  gap: 1rem;               /* space between children */
+  flex-wrap: wrap;         /* allow wrapping on smaller screens */
+}
+
+header span {
+  /* Make the span take full available width */
+  flex: 1 1 100%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  word-spacing: 0.3em;    /* add spacing between words */
+}
 
   header img {
     width: 100px;
@@ -31,7 +46,7 @@
 
   /* Horizontal nav menu */
   .nav-menu {
-    display: flex;
+    display: flex !important; /* force display on larger screens */
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
@@ -50,7 +65,8 @@
     padding: 0.3rem 0.6rem;
   }
 
-  .nav-menu a:hover {
+  .nav-menu a:hover,
+  .nav-menu a.active {
     background-color: #cce5ff;
     border-radius: 5px;
   }
@@ -107,11 +123,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     justify-items: center;
+    width: 100%;
   }
 
   .course {
     flex: 1 1 calc(33.333% - 1.5rem);
     max-width: 200px;
+    width: 100%;
+    margin-bottom: 0;
   }
 
   .course:hover {
@@ -152,10 +171,25 @@
     background-color: #cce5ff;
   }
 
+  /* Footer */
   footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.95rem;
   }
+
+  .card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 }

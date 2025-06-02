@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join the Chamber</title>
+  <link rel="stylesheet" href="styles/join.css">
+</head>
+<body>
+  <header>
+    <h1>Join the Gilbert Chamber of Commerce</h1>
+  </header>
+
+  <main>
+    <form id="joinForm" action="thankyou.html" method="get">
+      <fieldset>
+        <legend>Personal Information</legend>
+        
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
+        </div>
+
+        <div class="form-group full">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email">
+        </div>
+
+        <div class="form-group full">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required autocomplete="tel">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Business Details</legend>
+        
+        <div class="form-group full">
+          <label for="orgName">Business/Organization Name</label>
+          <input type="text" id="orgName" name="orgName" required autocomplete="organization">
+        </div>
+
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title">
+        </div>
+
+        <div class="form-group">
+          <label for="website">Website</label>
+          <input type="url" id="website" name="website" autocomplete="url">
+        </div>
+
+        <div class="form-group full">
+          <label for="description">Business Description</label>
+          <textarea id="description" name="description" rows="4"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Membership</legend>
+        
+        <div class="form-group full">
+          <label for="membershipLevel">Membership Level</label>
+          <select id="membershipLevel" name="membershipLevel" required>
+            <option value="">-- Please choose an option --</option>
+            <option value="nonprofit">Non-Profit</option>
+            <option value="bronze">Bronze</option>
+            <option value="silver">Silver</option>
+            <option value="gold">Gold</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <input type="hidden" id="timestamp" name="timestamp">
+
+      <div class="form-group full">
+        <button type="submit">Join Now</button>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById("timestamp").value = new Date().toISOString();
+  </script>
+</body>
+</html>
