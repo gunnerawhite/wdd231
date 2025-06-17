@@ -1,83 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="favicon.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Course homepage for WDD 231 project">
-    <meta name="author" content="Gunner White">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <meta property="og:title" content="WDD231-GunnerWhite">
-    <meta property="og:description" content="A little about the life and schooling of Gunner White">
-    <meta property="og:image" content="https://wallpaperaccess.com/full/1218403.jpg">
-    <meta property="og:url" content="https://wdd231/gunnerwhite.com">
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css">
-    <script defer src="scripts/navigation.js"></script>
-    <script defer src="scripts/date.js"></script>
-    <script defer src="scripts/course.js"></script>
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <title>Movie Theater - Select a Movie</title>
+    <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
+
     <header>
-        <span><img src="images/gunner_image.png" alt="Gunner White's Photo"> Gunner White</span>
-        
+        <h1>Movie Theater</h1>
+        <p>Select a movie to continue</p>
     </header>
-    <nav>
-  <button class="nav-toggle" aria-label="Toggle navigation menu">☰</button>
-        <ul class="nav-menu">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="https://yourgithubusername.github.io/wdd231/chamber/">Chamber</a></li>
-            <li><a href="https://yourgithubusername.github.io/wdd231/final/">Final</a></li>
-            <li><a href="https://github.com/yourgithubusername" target="_blank">GitHub Profile</a></li>
-            <li><a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></li>
-        </ul>
-    </nav>
-    <main>
-  <h1>Home</h1>
-  <div class="top-sections">
-    <section>
-      <h2>Course Work</h2>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </section>
 
-    <section>
-      <h2>Gilbert, Arizona</h2>
-      <img src="images/Arizona_image.png" alt="Arizona View" class="arizona-img">
-      <p>Arizona Desert</p>
-    </section>
-  </div>
+    <main class="movie-list">
 
-  <section>
-    <h2>Web and Computer Programming Certificate</h2>
-    <div class="certificate-header">
-      <h3 class="certificate-title">All</h3>
-      <h3 class="certificate-title">CSE</h3>
-      <h3 class="certificate-title">WDD</h3>
-    </div>
+        <section class="movie-card">
+            <img src="images/avengers_img.jpg" alt="Avengers Poster" class="movie-poster" />
+            <div class="movie-info">
+                <h2>Avengers</h2>
+                <p>Price: $10.00</p>
+                <p>Showtimes: 3:00 PM, 6:00 PM, 9:00 PM</p>
+            </div>
+            <div class="movie-action">
+                <a href="seats.html?movie=Avengers&price=10" class="select-button">Select</a>
+            </div>
+        </section>
 
-    <div class="courses">
-      <div class="course completed">CSE110</div>
-      <div class="course completed">WDD130</div>
-      <div class="course completed">CSE111</div>
-      <div class="course incomplete">CSE210</div>
-      <div class="course completed">WDD131</div>
-      <div class="course incomplete">WDD231</div>
-    </div>
-  </section>
-</main>
-    <footer>
-  <p>&copy; <span id="year"></span> Gunner White | Arizona, USA</p>
-  <p id="lastModified"></p>
-</footer>
+        <section class="movie-card">
+            <img src="images/joker_img.jpg" alt="Joker Poster" class="movie-poster" />
+            <div class="movie-info">
+                <h2>Joker</h2>
+                <p>Price: $12.00</p>
+                <p>Showtimes: 2:00 PM, 5:00 PM, 8:00 PM</p>
+            </div>
+            <div class="movie-action">
+                <a href="seats.html?movie=Joker&price=12" class="select-button">Select</a>
+            </div>
+        </section>
+
+        <section class="movie-card">
+            <img src="images/ToyStory_img.jpg" alt="Toy Story Poster" class="movie-poster" />
+            <div class="movie-info">
+                <h2>Toy Story</h2>
+                <p>Price: $8.00</p>
+                <p>Showtimes: 1:00 PM, 4:00 PM, 7:00 PM</p>
+            </div>
+            <div class="movie-action">
+                <a href="seats.html?movie=ToyStory&price=8" class="select-button">Select</a>
+            </div>
+        </section>
+
+        <section class="movie-card">
+            <img src="images/LionKing_img.jpg" alt="Lion King Poster" class="movie-poster" />
+            <div class="movie-info">
+                <h2>Lion King</h2>
+                <p>Price: $9.00</p>
+                <p>Showtimes: 12:00 PM, 3:00 PM, 6:00 PM</p>
+            </div>
+            <div class="movie-action">
+                <a href="seats.html?movie=LionKing&price=9" class="select-button">Select</a>
+            </div>
+        </section>
+
+    </main>
+
 </body>
 </html>
